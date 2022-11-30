@@ -5,7 +5,11 @@ const usersRoutes = require('./users');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.send('Demo server working!');
+  return res.json({
+    message: 'Sample API',
+    serverNo: process.env.SERVER_NO || 0,
+    pid: process.pid,
+  });
 });
 
 /* Test routes. */
